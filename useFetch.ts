@@ -1,15 +1,6 @@
 import { useState, useEffect } from "react";
-/* 
-this code is for fetching data from url
-mention type of data for better experience
-it has 3 states it returns
 
-data -> which returns the data(as a <T> type)
-loading -> which returns true or false (true for fetching isn't done false for done)
-error -> which return the error string
-
- */
-function useFetch<T>(url: string) {
+function useFetch<T>(url: string): [T | null, boolean, string | null] {
     const [data, setData] = useState<T | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -38,7 +29,7 @@ function useFetch<T>(url: string) {
         fetchData();
     }, [url]);
 
-    return { data, loading, error };
+    return [data, loading, error];
 }
 
 export default useFetch;
