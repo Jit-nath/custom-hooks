@@ -100,28 +100,29 @@ const [data, loading, error] = usePost<Response>("https://example.com/api", {
 ## Additional Documentation
 
 #### Why use these custom hooks?
+> These hooks help abstract away the repetitive logic for making HTTP requests in React components.
+  Instead of managing state, loading, and error handling in each component,
+  you can reuse these hooks to manage the data fetching process in a clean and reusable way.
 
-```
-These hooks help abstract away the repetitive logic for making HTTP requests in React components. Instead of managing state, loading, and error handling in each component, you can reuse these hooks to manage the data fetching process in a clean and reusable way.
-```
 
 #### How to handle different HTTP statuses and errors?
-
-```
-The hooks handle errors by setting the error state if something goes wrong during the fetch or post operation.
-You can extend the functionality to handle specific HTTP status codes or responses based on your needs.
-```
+>The hooks handle errors by setting the error state if something goes wrong
+  during the fetch or post operation.
+  You can extend the functionality to handle specific
+  HTTP status codes or responses based on your needs.
 
 #### When to use interfaces for the response types?
-
-```
-Using TypeScript interfaces ensures type safety when consuming the response data. It provides autocompletion, helps detect potential bugs early, and makes the code more readable and maintainable.
-```
+> Using TypeScript interfaces ensures type safety when
+  consuming the response data. It provides autocompletion,
+  helps detect potential bugs early, and makes the code more
+  readable and maintainable.
 
 #### Final Notes
+> These hooks are designed to make the code cleaner and more reusable,
+  enabling you to fetch and post data with minimal boilerplate.
+  You can extend and modify them as per your specific needs,
+  such as adding features like request cancellation, retries,
+  or handling different content types.
 
-```
-These hooks are designed to make the code cleaner and more reusable, enabling you to fetch and post data with minimal boilerplate. You can extend and modify them as per your specific needs, such as adding features like request cancellation, retries, or handling different content types.
-```
 
 Feel free to customize and improve upon these hooks for your own projects!
