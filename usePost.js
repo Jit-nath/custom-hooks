@@ -9,12 +9,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = require("react");
+import {useState, useEffect} from "react";
 function usePost(url, body) {
-    const [data, setData] = (0, react_1.useState)(null);
-    const [loading, setLoading] = (0, react_1.useState)(false);
-    const [error, setError] = (0, react_1.useState)(null);
-    (0, react_1.useEffect)(() => {
+    const [data, setData] = (0, useState)(null);
+    const [loading, setLoading] = (0, useState)(false);
+    const [error, setError] = (0, useState)(null);
+    (0, useEffect)(() => {
         if (!body)
             return;
         let isMounted = true;
@@ -55,4 +55,5 @@ function usePost(url, body) {
     }, [url, body]);
     return [data, loading, error];
 }
-exports.default = usePost;
+const _default = usePost;
+export {_default as default};
